@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZSTC_STU_22EE015000015'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZSTC_STU_22EE015000015'
+  }
+}
+define service ZZSTUI_STU_22EE015_O4015 provider contracts odata_v4_ui {
+  expose ZZSTC_STU_22EE015000015;
+}

@@ -1,0 +1,53 @@
+managed implementation in class ZZSTBP_R_STU_22EE015000015 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZSTR_STU_22EE015000015 alias ZzstrStu22ee015000015
+persistent table ZSTU_22EE015
+extensible
+draft table ZZSTSTU000_D015
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   StudID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   StudID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZSTU_22EE015 corresponding extensible
+  {
+    StudID = STUD_ID;
+    FirstName = FIRST_NAME;
+    LastName = LAST_NAME;
+    Gender = GENDER;
+    Dob = DOB;
+    Course = COURSE;
+    AdmissionDate = ADMISSION_DATE;
+    Email = EMAIL;
+    Phone = PHONE;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}
